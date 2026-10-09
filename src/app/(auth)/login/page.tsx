@@ -113,6 +113,7 @@ function LoginPageInner() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                suppressHydrationWarning
                 className="border-border bg-muted text-foreground placeholder:text-muted-foreground focus-visible:border-primary focus-visible:ring-primary/20"
               />
             </div>

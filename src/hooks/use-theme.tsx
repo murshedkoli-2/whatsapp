@@ -97,6 +97,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setModeState(next);
     if (typeof document !== "undefined") {
       document.documentElement.dataset.mode = next;
+      document.documentElement.classList.toggle("dark", next === "dark");
     }
     try {
       localStorage.setItem(MODE_STORAGE_KEY, next);
@@ -124,6 +125,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         if (isMode(e.newValue) && e.newValue !== mode) {
           setModeState(e.newValue);
           document.documentElement.dataset.mode = e.newValue;
+          document.documentElement.classList.toggle("dark", e.newValue === "dark");
         }
       }
     }
